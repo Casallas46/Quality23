@@ -2006,7 +2006,7 @@
                 </li>
 
                 <li>
-                    <a href="https://wa.me/573000000000" target="_blank" class="nav-contact" id="nav-whatsapp-link">
+                    <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="nav-contact" id="nav-whatsapp-link">
 
                         WHATSAPP
 
@@ -2039,7 +2039,7 @@
         <a href="#categorias" class="mobile-link">CATEGORÍAS</a>
         <a href="#productos" class="mobile-link">PRODUCTOS</a>
         <a href="#contacto" class="mobile-link">CONTACTO</a>
-        <a href="https://wa.me/573000000000" target="_blank" class="mobile-link whatsapp-mobile"
+        <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="mobile-link whatsapp-mobile"
             id="mobile-whatsapp-link">WHATSAPP</a>
 
     </div>
@@ -2202,7 +2202,7 @@
             <div class="category" data-cat="ropa-formal" onclick="goToCategory('ropa-formal')">
 
                 <img src="https://tienda.quonam.com.ar/media/catalog/product/cache/0ee050c3ffc3555709b9bb6062f4d7e9/5/9/595-RBK2100263155-MARINO_1.jpg"
-                    alt="Ropa formal">
+                    alt="Ropa formal y elegante de Quality23">
 
 
                 <div class="category-content">
@@ -2229,7 +2229,7 @@
             <div class="category" data-cat="deportiva" onclick="goToCategory('deportiva')">
 
                 <img src="https://velocitysavage.com/cdn/shop/files/camiseta-america-de-cali-2026-27-velocity-savage-2620509.png?v=1783072750"
-                    alt="Ropa deportiva">
+                    alt="Ropa deportiva de Quality23">
 
 
                 <div class="category-content">
@@ -2256,7 +2256,7 @@
             <div class="category" data-cat="zapatos" onclick="goToCategory('zapatos')">
 
                 <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=90"
-                    alt="Zapatos">
+                    alt="Zapatos y calzado exclusivo de Quality23">
 
 
                 <div class="category-content">
@@ -2279,7 +2279,7 @@
             <div class="category" data-cat="relojes" onclick="goToCategory('relojes')">
 
                 <img src="https://images.pexels.com/photos/38796259/pexels-photo-38796259/free-photo-of-primer-plano-de-un-reloj-gmt-de-lujo-de-acero-inoxidable.jpeg?cs=tinysrgb&dpr=1&w=500"
-                    alt="Relojes">
+                    alt="Relojes de lujo y accesorios Quality23">
 
 
                 <div class="category-content">
@@ -2302,7 +2302,7 @@
             <div class="category" data-cat="gorras" onclick="goToCategory('gorras')">
 
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvmXvYuJOnLtURsgnqQ0gJMzeXzM6oo6GXrRJZuviVS_JKD5ETGXZnol8f&s=10"
-                    alt="Gorras">
+                    alt="Gorras y accesorios casuales Quality23">
 
 
                 <div class="category-content">
@@ -2492,7 +2492,7 @@
             </div>
 
 
-            <a href="https://wa.me/573000000000" class="whatsapp" id="contact-whatsapp-link" target="_blank">
+            <a href="https://wa.me/573000000000" class="whatsapp" id="contact-whatsapp-link" target="_blank" rel="noopener noreferrer">
 
                 💬 ESCRIBIR POR WHATSAPP
 
@@ -2507,7 +2507,7 @@
          WHATSAPP FLOTANTE
     ================================= -->
 
-    <a href="https://wa.me/573000000000" target="_blank" class="floating-whatsapp" id="floating-whatsapp-link">
+    <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" id="floating-whatsapp-link">
 
         💬
 
@@ -2565,7 +2565,7 @@
                     CONTACTO
                 </div>
 
-                <a href="https://wa.me/573000000000" id="footer-whatsapp-link" target="_blank"
+                <a href="https://wa.me/573000000000" id="footer-whatsapp-link" target="_blank" rel="noopener noreferrer"
                     style="color: #666; text-decoration: none; font-size: 12px; display: block; margin-bottom: 8px;">
                     WhatsApp
                 </a>
@@ -2825,7 +2825,7 @@
 
                     <input type="hidden" id="pf-main-image-data">
                     <div id="main-file-preview-box" style="margin-top:10px; display:none;">
-                        <img id="main-file-preview" class="image-preview-thumb">
+                        <img id="main-file-preview" class="image-preview-thumb" alt="Vista previa de la imagen principal">
                     </div>
                 </div>
 
@@ -3114,7 +3114,6 @@
             const statusClass = product.available ? 'disponible' : 'agotado';
             const statusLabel = product.available ? 'DISPONIBLE' : 'AGOTADO';
 
-            // Sanitización de las propiedades dinámicas
             const safeName = escapeHTML(product.name);
             const safeDesc = escapeHTML(product.shortDesc);
             const safeImg = escapeHTML(product.mainImage);
@@ -3252,7 +3251,7 @@
 
             const thumbsHTML = allImages.length > 1
                 ? `<div class="detail-thumbs">${allImages.map((img, i) => `
-                    <img src="${escapeHTML(img)}" class="${i === currentDetailImageIndex ? 'active' : ''}" onclick="selectDetailImage(${i})">
+                    <img src="${escapeHTML(img)}" alt="Miniatura del producto ${escapeHTML(product.name)}" class="${i === currentDetailImageIndex ? 'active' : ''}" onclick="selectDetailImage(${i})">
                 `).join('')}</div>`
                 : '';
 
@@ -3299,7 +3298,7 @@
                     ${sizesHTML}
                     ${colorsHTML}
 
-                    <a href="${buildProductWhatsappUrl(product)}" target="_blank" class="detail-whatsapp-btn">
+                    <a href="${buildProductWhatsappUrl(product)}" target="_blank" rel="noopener noreferrer" class="detail-whatsapp-btn">
                         💬 CONSULTAR POR WHATSAPP
                     </a>
                 </div>
@@ -3486,7 +3485,7 @@
 
             tbody.innerHTML = filteredProducts.map(p => `
                 <tr>
-                    <td><img src="${escapeHTML(p.mainImage)}" class="admin-thumb"></td>
+                    <td><img src="${escapeHTML(p.mainImage)}" alt="Miniatura de admin para ${escapeHTML(p.name)}" class="admin-thumb"></td>
                     <td>${escapeHTML(p.name)}</td>
                     <td>${escapeHTML(CATEGORY_LABELS[p.category] || p.category)}</td>
                     <td>${formatPrice(p.price)}</td>
@@ -3580,7 +3579,7 @@
                 <input type="file" accept="image/*" style="display:none;" onchange="handleExtraFileUpload(this)">
                 <button type="button" onclick="this.previousElementSibling.click()">📁 Subir</button>
                 <input type="url" placeholder="o pega una URL..." value="${value || ''}" style="flex:1;">
-                <img class="image-preview-thumb" src="${value || ''}" style="display:${value ? 'block' : 'none'};">
+                <img class="image-preview-thumb" src="${value || ''}" alt="Vista previa de imagen adicional" style="display:${value ? 'block' : 'none'};">
                 <button type="button" onclick="this.parentElement.remove()">✕</button>
             `;
 
